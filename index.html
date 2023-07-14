@@ -7,13 +7,15 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
-    <!-- Custom CSSd -->
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"/>
+    <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <title>Culinary Climate</title>
 </head>
 <body>
     <header><h1>Culinary <img src="assets/images/ice-cream-cloud.jpg" width="40px" height="50px"> Climate</h1>
-        <button class="favorites">Favorites</button>
+        <button class="favorites-btn">Favorites ♥️</button>
     </header>
     <main>
         <input type="text" class="search"><button class="search-btn">Find me recipes!</button>
@@ -21,8 +23,10 @@
         </div>
         <div class="container-recipes">
             <p>Recipes cards go here</p>
+            <br>
+            <button class="add-to-btn">Add to Favorites</button>
         </div>
-        <button class="reset">None of these sound good, try again.</button>
+        <button class="reset-btn">None of these sound good, try again.</button>
     </main>
     <!-- Custom Script -->
     <script src="./assets/script.js"></script>
