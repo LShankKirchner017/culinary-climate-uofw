@@ -14,17 +14,23 @@
     <title>Culinary Climate</title>
 </head>
 <body>
-    <header><h1 class="title is-1">Culinary <img src="assets/images/ice-cream-cloud.jpg" width="40px" height="50px"> Climate</h1>
+    <header><h1>Culinary <img src="assets/images/ice-cream-cloud.jpg" width="40px" height="50px"> Climate</h1>
         <button class="button is-info is-normal">Favorites </button>
     </header>
     <main>
-        <input class="input is-normal" type="text" placeholder="search"><button class="button is-info is-normal">Find me recipes!</button>
+        <div class="column is-3">
+                <input class="input is-normal is-info is-rounded is-focused" type="text" placeholder="search">
+                    <button class="button is-info is-normal">Find me recipes!
+                    </button>
+               
+        </div>
         <div class="container-weather">
         </div>
         <div class="container-recipes">
             <p>Recipes cards go here</p>
             <br>
             <button class="button is-info is-small">Add to Favorites</button>
+            </div>
         </div>
         <button class="button is-info is-normal">None of these sound good, try again.</button>
     </main>
