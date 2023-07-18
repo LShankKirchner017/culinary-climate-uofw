@@ -17,9 +17,32 @@ async function getTastyApi(searchTerm) {
     }
 }
 
-getTastyApi('cheese')
-getTastyApi('chicken')
-getTastyApi('pasta')
+function weatherType() {
+  //let clear = (weather data)
+  //let cloudy = (weather data)
+  //let precip = (rain/snow/storms weather data)
+  //let hot = temp > 65
+  //let cold = temp < 65
+
+  //if hot
+    //if clear, search Tasty for:
+      //grill, salad, Mexican, Spring, bbq, seafood, summer
+      //NO stovetop, bake
+    //if cloudy, search Tasty for:
+      //slow cooker, summer, spring, instant pot
+      //NO stovetop, bake
+
+  //else if cold
+    //if clear, search Tasty for: 
+      //every occasion, fall, winter
+    //if cloudy, search Tasty for:
+      //fall, slow cooker, bake, winter
+
+  //else if
+    //precip, search Tasty for:
+      //bake, winter, comfort food, fall 
+      //NO grill
+}
 
 document.getElementById('fetchButton').addEventListener('click', fetchWeather);
 document.getElementById('cityInput').addEventListener('keydown', function(event) {
