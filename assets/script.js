@@ -21,11 +21,17 @@ getTastyApi('cheese')
 getTastyApi('chicken')
 getTastyApi('pasta')
 
+
+//dayjs display date
+var currentDate = dayjs();
+var formattedDate = currentDate.format('MM-DD-YYYY');
+document.getElementById('dateDisplay').textContent = formattedDate;
+
+
 //weather api and geo location api
 document.getElementById('fetchButton').addEventListener('click', fetchWeather);
 
 function fetchWeather() {
-  
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   } else {
@@ -37,39 +43,37 @@ function successCallback(position) {
   var apiKey = '312ef17758b755a8564935f0cd1d338b';
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
-  var url = `https://api.openweathermap.org/data/2.5/weather?lat=`+latitude+`&lon=`+longitude+`&appid=`+apiKey+`&units=imperial`;
-  fetchWeatherData(url);
-}
+  var weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=` + latitude + `&lon=` + longitude+ `&appid=` + apiKey + `&units=imperial`;
 
-function errorCallback(error) {
-  console.log('Error fetching geolocation:', error);
-}
-
-function fetchWeatherData(url) {
-  fetch(url)
+  fetch(weatherUrl)
     .then(response => response.json())
     .then(data => {
       var temperature = data.main.temp;
       var humidity = data.main.humidity;
       var description = data.weather[0].description;
       var iconCode = data.weather[0].icon;
+      var cityName = data.name;
 
       var card = document.createElement('div');
       card.classList.add('card');
 
+      var cityNameElement = document.createElement('h2');
+      cityNameElement.textContent = cityName;
+
       var temperatureElement = document.createElement('p');
-      temperatureElement.textContent = `Temperature: ${temperature}°F`;
+      temperatureElement.textContent = `Temperature: `+ temperature + `°F`;
 
       var humidityElement = document.createElement('p');
-      humidityElement.textContent = `Humidity:` +humidity+`%`;
+      humidityElement.textContent = `Humidity: ` + humidity + `%`;
 
       var descriptionElement = document.createElement('p');
-      descriptionElement.textContent = `Description:` + description;
+      descriptionElement.textContent = `Description: ` + description + ``;
 
       var iconElement = document.createElement('img');
-      iconElement.src = `https://openweathermap.org/img/w/`+iconCode+`.png`;
+      iconElement.src = `https://openweathermap.org/img/w/` + iconCode + `.png`;
       iconElement.alt = 'Weather Icon';
 
+      card.appendChild(cityNameElement);
       card.appendChild(temperatureElement);
       card.appendChild(humidityElement);
       card.appendChild(descriptionElement);
@@ -83,4 +87,10 @@ function fetchWeatherData(url) {
       console.log('Error fetching weather data:', error);
     });
 }
+
+function errorCallback(error) {
+  console.log('Error fetching geolocation:', error);
+}
+
+
 
