@@ -27,7 +27,7 @@ function fetchWeather() {
 
 
       var temperatureElement = document.createElement('p');
-      temperatureElement.textContent = `Temperature: ${temperature}°C`;
+      temperatureElement.textContent = `Temperature: ${temperature}°F`;
 
       var humidityElement = document.createElement('p');
       humidityElement.textContent = `Humidity: ${humidity}%`;
