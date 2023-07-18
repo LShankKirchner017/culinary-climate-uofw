@@ -21,7 +21,14 @@
                 <h1 class="title is-1 mt-5 ml-5 is-black">Culinary <img src="assets/images/cc-logo.png" width="50px" height="50px"> Climate</h1>
             </div>
         </div>
-        <div id="weatherContainer"></div>
+
+        <!-- added date display before weather card and city name -->
+        <div>
+          <h1 id="dateDisplay"></h1>
+          <div id="weatherContainer">
+        </div>
+          
+        </div>
         <div class="level-right">
             <button class="button is-info mr-5 mt-5 level-item"><strong>Favorites ♥️</strong></p></button>
         </div>
@@ -30,6 +37,7 @@
 
         <button id="fetchButton" class="search-btn">Find me recipes!</button>
         <div class="container-weather">
+          
         </div>
 
         <div class="container-recipes">
@@ -157,6 +165,7 @@
 
     
     <!-- Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>
