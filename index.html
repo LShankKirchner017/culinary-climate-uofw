@@ -13,7 +13,6 @@
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <title>Culinary Climate</title>
 </head>
-
 <body>
     <nav class="level has-background-white">
         <div class="level-left">
@@ -22,21 +21,34 @@
                 <h1 class="title is-1 mt-5 ml-5 is-black">Culinary <img src="assets/images/cc-logo.png" width="50px" height="50px"> Climate</h1>
             </div>
         </div>
-        <div class="level-right">
-            <button class="favorites-btn mr-5 mt-5 level-item"><strong>Favorites ♥️</strong></p></button>
-        </div>
-    </nav>
-            
-    <main>
-        <input id="cityInput" type="text" class="search" placeholder="Enter city name"><button id="fetchButton" class="search-btn">Find me recipes!</button>
 
-        <div class="container-weather"></div>
+        <!-- added date display before weather card and city name -->
+        <div>
+          <h1 id="dateDisplay"></h1>
+          <div id="weatherContainer">
+        </div>
+          
+        </div>
+        <div class="level-right">
+            <button class="button is-info mr-5 mt-5 level-item"><strong>Favorites ♥️</strong></p></button>
+        </div>
+    </nav>        
+    <main>
+
+        <button id="fetchButton" class="search-btn">Find me recipes!</button>
+        <div class="container-weather">
+          
+        </div>
+
         <div class="container-recipes">
             <!-- <p>Recipes cards go here</p> -->
             <div class="columns is-mobile $column-gap">
                 <div class="column">
+
+
                     <!-- recipe one -->
-                    <div class="card">
+                    <div class="card ml-5">
+
                         <div class="card-image">
                           <figure class="image is-96x96 rounded">
                             <img src="" alt="Placeholder image">
@@ -45,11 +57,11 @@
                         <div class="card-content">
                           <div class="media">
                             <div class="media-content">
-                              <p class="title is-4">Recipe One</p>
+                              <p class="title is-4">Receipe One</p>
                             </div>
                           </div>
                           <div class="content">
-                            Receipe description <a>@tasty</a>.
+                            Recipe description <a>@tasty</a>.
                             <a href="#">#tasty</a> 
                             <br>
                             <div class="card">
@@ -63,7 +75,7 @@
                       </div>
                 </div>
                 <div class="column">
-                  <!-- recipe two -->
+                  <!-- receipe two -->
                   <div class="card">
                     <div class="card-image">
                       <figure class="image is-96x96 rounded">
@@ -73,11 +85,11 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Recipe Two</p>
+                          <p class="title is-4">Receipe Two</p>
                         </div>
                       </div>
                       <div class="content">
-                        Receipe description <a>@tasty</a>.
+                        Recipe description <a>@tasty</a>.
                         <a href="#">#tasty</a> 
                         <br>
                         <div class="card">
@@ -91,7 +103,7 @@
                   </div>
             </div>
             <div class="column">
-                  <!-- recipe three -->
+                  <!-- receipe three -->
                   <div class="card">
                     <div class="card-image">
                       <figure class="image is-96x96 rounded">
@@ -101,11 +113,11 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Recipe Three</p>
+                          <p class="title is-4">Receipe Three</p>
                         </div>
                       </div>
                       <div class="content">
-                        Receipe description <a>@tasty</a>.
+                        Recipe description <a>@tasty</a>.
                         <a href="#">#tasty</a> 
                         <br>
                         <div class="card">
@@ -119,21 +131,23 @@
                   </div>
             </div>
             <div class="column">
+
                   <!-- recipe four -->
-                  <div class="card">
+                  <div class="card mr-5">
+
                     <div class="card-image">
-                      <figure class="image is-96x96 rounded">
-                        <img src="" alt="Placeholder image">
+                      <figure class="image is-96x96">
+                        <img class="is-rounded" src="" alt="Placeholder image">
                       </figure>
                     </div>
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Recipe Four</p>
+                          <p class="title is-4">Receipe Four</p>
                         </div>
                       </div>
                       <div class="content">
-                        Receipe description <a>@tasty</a>.
+                        Recipe description <a>@tasty</a>.
                         <a href="#">#tasty</a> 
                         <br>
                         <div class="card">
@@ -149,8 +163,9 @@
         </div>
     </main>
 
-    <div id="weatherContainer"></div>
+    
     <!-- Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>

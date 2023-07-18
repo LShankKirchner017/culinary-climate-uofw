@@ -2,7 +2,7 @@
     font-family: 'Cormorant', serif;
 };
 
-:root {
+/* :root {
     --primary: #366581;
     --secondary: #48B4C6;
 }
@@ -28,9 +28,13 @@ header{
 
 }
 
-img{
 
+img{
+width: 1.6em;
 };
+
+
+
 
 .favorites-btn {
 
