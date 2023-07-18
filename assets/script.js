@@ -17,32 +17,6 @@ async function getTastyApi(searchTerm) {
     }
 }
 
-function weatherType() {
-  //let clear = (weather data)
-  //let cloudy = (weather data)
-  //let precip = (rain/snow/storms weather data)
-  //let hot = temp > 65
-  //let cold = temp < 65
-
-  //if hot
-    //if clear, search Tasty for:
-      //grill, salad, Mexican, Spring, bbq, seafood, summer
-      //NO stovetop, bake
-    //if cloudy, search Tasty for:
-      //slow cooker, summer, spring, instant pot
-      //NO stovetop, bake
-
-  //else if cold
-    //if clear, search Tasty for: 
-      //every occasion, fall, winter
-    //if cloudy, search Tasty for:
-      //fall, slow cooker, bake, winter
-
-  //else if
-    //precip, search Tasty for:
-      //bake, winter, comfort food, fall 
-      //NO grill
-}
 
 document.getElementById('fetchButton').addEventListener('click', fetchWeather);
 document.getElementById('cityInput').addEventListener('keydown', function(event) {
@@ -98,4 +72,57 @@ function fetchWeather() {
     .catch(error => {
       console.log('Error fetching weather data:', error);
     });
+}
+
+function weatherType() {
+  //let clear = 
+ // let cloudy = 
+  //let hot = temp > 65
+ // let cold = temp < 65
+
+  if (temp > 65) {
+      if (clear) {
+        hotClear()
+      } else {
+        hotCloudy()
+      }
+  } else if (cold) {
+      if (clear) {
+        coldClear()
+      } else {
+        coldCloudy()
+      }
+  } else {
+    precip()
+  }
+ }
+
+function hotClear() {
+  console.log("Hot and clear skies!")
+  //Search TastyAPI:
+  //grill, salad, Mexican, Spring, bbq, seafood, summer
+  //NO stovetop, bake
+}
+
+function hotCloudy() {
+  console.log("Hot and cloudy skies!")
+  //Search TastyAPI:
+  //slow cooker, summer, spring, instant pot
+  //NO stovetop, bake
+}
+
+function coldClear() {
+  //Search TastyAPI:
+  //every occasion, fall, winter
+}
+
+function coldCloudy() {
+  //Search TastyAPI:
+  //fall, slow cooker, bake, winter
+}
+
+function precip() {
+  //Search TastyAPI:
+  //bake, winter, comfort food, fall 
+  //NO grill
 }
