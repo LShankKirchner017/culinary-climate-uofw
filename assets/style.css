@@ -2,6 +2,21 @@
     font-family: 'Cormorant', serif;
 };
 
+.header-image {
+    background-image: url("https://images.pexels.com/photos/6707512/pexels-photo-6707512.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+.title {
+    padding-top: 50px;
+}
+
+.title.is-1 {
+  font-size: 5rem;
+}
 /* :root {
     --primary: #366581;
     --secondary: #48B4C6;
