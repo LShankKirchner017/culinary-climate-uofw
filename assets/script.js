@@ -1,10 +1,16 @@
-// Add event listener to the button
 document.getElementById('fetchButton').addEventListener('click', fetchWeather);
+document.getElementById('cityInput').addEventListener('keydown', function(event) {
+  if (event.key === 'Enter') {
+    event.preventDefault(); // Prevent the default Enter key behavior (form submission)
+
+    fetchWeather();
+  }
+});
 
 function fetchWeather() {
   var apiKey = '312ef17758b755a8564935f0cd1d338b';
   var city = document.getElementById('cityInput').value;
-  var url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
+  var url = "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=imperial";
 
   fetch(url)
     .then(response => response.json())
@@ -19,6 +25,7 @@ function fetchWeather() {
       var card = document.createElement('div');
       card.classList.add('card');
 
+
       var temperatureElement = document.createElement('p');
       temperatureElement.textContent = `Temperature: ${temperature}°C`;
 
@@ -32,13 +39,12 @@ function fetchWeather() {
       iconElement.src = `https://openweathermap.org/img/w/${iconCode}.png`;
       iconElement.alt = 'Weather Icon';
 
-      // Append the weather data elements to the card
+      
       card.appendChild(temperatureElement);
       card.appendChild(humidityElement);
       card.appendChild(descriptionElement);
       card.appendChild(iconElement);
 
-      // Display the card in the weather container
       const weatherContainer = document.getElementById('weatherContainer');
       weatherContainer.innerHTML = ''; // Clear previous results
       weatherContainer.appendChild(card);
