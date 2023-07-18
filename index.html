@@ -27,9 +27,8 @@
         </div>
     </nav>
             
-
     <main>
-        <input type="text" class="search"><button class="search-btn">Find me recipes!</button>
+        <input id="cityInput" type="text" class="search" placeholder="Enter city name"><button id="fetchButton" class="search-btn">Find me recipes!</button>
         <div class="container-weather">
         </div>
         <div class="container-recipes">
@@ -146,10 +145,11 @@
                       </div>
                     </div>
                   </div>
-            </div>
-                
+              </div>
         </div>
     </main>
+
+    <div id="weatherContainer"></div>
     <!-- Custom Script -->
     <script src="./assets/script.js"></script>
 </body>
