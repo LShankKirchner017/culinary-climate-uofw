@@ -13,20 +13,142 @@
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <title>Culinary Climate</title>
 </head>
+
 <body>
-    <header><h1>Culinary <img src="assets/images/ice-cream-cloud.jpg" width="40px" height="50px"> Climate</h1>
-        <button class="favorites-btn">Favorites ♥️</button>
-    </header>
+    <nav class="level has-background-white">
+        <div class="level-left">
+            <div class="level-item">
+              <p class="subtitle is-5"></p>
+                <h1 class="title is-1 mt-5 ml-5 is-black">Culinary <img src="assets/images/cc-logo.png" width="50px" height="50px"> Climate</h1>
+            </div>
+        </div>
+        <div class="level-right">
+            <button class="favorites-btn mr-5 mt-5 level-item"><strong>Favorites ♥️</strong></p></button>
+        </div>
+    </nav>
+            
+
     <main>
         <input type="text" class="search"><button class="search-btn">Find me recipes!</button>
         <div class="container-weather">
         </div>
         <div class="container-recipes">
-            <p>Recipes cards go here</p>
-            <br>
-            <button class="add-to-btn">Add to Favorites</button>
+            <!-- <p>Recipes cards go here</p> -->
+            <div class="columns is-mobile $column-gap">
+                <div class="column">
+                    <!-- receipe one -->
+                    <div class="card">
+                        <div class="card-image">
+                          <figure class="image is-96x96 rounded">
+                            <img src="" alt="Placeholder image">
+                          </figure>
+                        </div>
+                        <div class="card-content">
+                          <div class="media">
+                            <div class="media-content">
+                              <p class="title is-4">Receipe One</p>
+                            </div>
+                          </div>
+                          <div class="content">
+                            Receipe description <a>@tasty</a>.
+                            <a href="#">#tasty</a> 
+                            <br>
+                            <div class="card">
+                                <footer class="card-footer">
+                                  <a href="#" class="card-footer-item">Save to favorites</a>
+                                  <a href="#" class="card-footer-item">Dislike</a>
+                                </footer>
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+                <div class="column">
+                  <!-- receipe two -->
+                  <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-96x96 rounded">
+                        <img src="" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">Receipe Two</p>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Receipe description <a>@tasty</a>.
+                        <a href="#">#tasty</a> 
+                        <br>
+                        <div class="card">
+                            <footer class="card-footer">
+                              <a href="#" class="card-footer-item">Save to favorites</a>
+                              <a href="#" class="card-footer-item">Dislike</a>
+                            </footer>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="column">
+                  <!-- receipe three -->
+                  <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-96x96 rounded">
+                        <img src="" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">Receipe Three</p>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Receipe description <a>@tasty</a>.
+                        <a href="#">#tasty</a> 
+                        <br>
+                        <div class="card">
+                            <footer class="card-footer">
+                              <a href="#" class="card-footer-item">Save to favorites</a>
+                              <a href="#" class="card-footer-item">Dislike</a>
+                            </footer>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="column">
+                  <!-- receipe four -->
+                  <div class="card">
+                    <div class="card-image">
+                      <figure class="image is-96x96 rounded">
+                        <img src="" alt="Placeholder image">
+                      </figure>
+                    </div>
+                    <div class="card-content">
+                      <div class="media">
+                        <div class="media-content">
+                          <p class="title is-4">Receipe Four</p>
+                        </div>
+                      </div>
+                      <div class="content">
+                        Receipe description <a>@tasty</a>.
+                        <a href="#">#tasty</a> 
+                        <br>
+                        <div class="card">
+                            <footer class="card-footer">
+                              <a href="#" class="card-footer-item">Save to favorites</a>
+                              <a href="#" class="card-footer-item">Dislike</a>
+                            </footer>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+                
         </div>
-        <button class="reset-btn">None of these sound good, try again.</button>
     </main>
     <!-- Custom Script -->
     <script src="./assets/script.js"></script>
