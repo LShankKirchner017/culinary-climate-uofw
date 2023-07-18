@@ -1,5 +1,5 @@
-async function getTastyApi() {
-    const url = 'https://tasty.p.rapidapi.com/recipes/auto-complete?prefix=chicken%20soup';
+async function getTastyApi(searchTerm) {
+    const url = 'https://tasty.p.rapidapi.com/recipes/list?q=' + searchTerm;
     const options = {
     method: 'GET',
     headers: {
@@ -10,12 +10,16 @@ async function getTastyApi() {
 
     try {
     const response = await fetch(url, options);
-        const result = await response.text();
+        const result = await response.json();
         console.log(result);
     } catch (error) {
         console.error(error);
     }
 }
+
+getTastyApi('cheese')
+getTastyApi('chicken')
+getTastyApi('pasta')
 
 document.getElementById('fetchButton').addEventListener('click', fetchWeather);
 document.getElementById('cityInput').addEventListener('keydown', function(event) {
