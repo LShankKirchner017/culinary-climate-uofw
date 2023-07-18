@@ -7,8 +7,21 @@
     --secondary: #48B4C6;
 }
 
-.columns {
-    
+.card {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.content {
+    text-align: start;
+}
+
+.card-footer {
+    padding: 5px;
+    margin: 1px;;
+    font-size: 10px;
+    text-align: center;
 }
 
 header{
