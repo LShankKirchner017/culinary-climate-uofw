@@ -29,15 +29,21 @@
     </div>
   </section>
     <main>
-        <input id="cityInput" type="text" class="input is-medium is-rounded column is-3 mt-5 ml-5"  placeholder="Enter city name"><button id="fetchButton" class="button is-light is-normal ml-5 mt-5 mb-5">Find me recipes!</button>
 
-        <div class="container-weather"></div>
+        <button id="fetchButton" class="search-btn">Find me recipes!</button>
+        <div class="container-weather">
+          
+        </div>
+
         <div class="container-recipes">
             <!-- <p>Recipes cards go here</p> -->
             <div class="columns is-mobile $column-gap">
                 <div class="column">
+
+
                     <!-- recipe one -->
                     <div class="card ml-5">
+
                         <div class="card-image">
                           <figure class="image is-96x96 rounded">
                             <img src="" alt="Placeholder image">
@@ -46,7 +52,7 @@
                         <div class="card-content">
                           <div class="media">
                             <div class="media-content">
-                              <p class="title is-4">Recipe One</p>
+                              <p class="title is-4">Receipe One</p>
                             </div>
                           </div>
                           <div class="content">
@@ -64,7 +70,7 @@
                       </div>
                 </div>
                 <div class="column">
-                  <!-- recipe two -->
+                  <!-- receipe two -->
                   <div class="card">
                     <div class="card-image">
                       <figure class="image is-96x96 rounded">
@@ -74,7 +80,7 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Recipe Two</p>
+                          <p class="title is-4">Receipe Two</p>
                         </div>
                       </div>
                       <div class="content">
@@ -92,7 +98,7 @@
                   </div>
             </div>
             <div class="column">
-                  <!-- recipe three -->
+                  <!-- receipe three -->
                   <div class="card">
                     <div class="card-image">
                       <figure class="image is-96x96 rounded">
@@ -102,7 +108,7 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Recipe Three</p>
+                          <p class="title is-4">Receipe Three</p>
                         </div>
                       </div>
                       <div class="content">
@@ -120,8 +126,10 @@
                   </div>
             </div>
             <div class="column">
+
                   <!-- recipe four -->
                   <div class="card mr-5">
+
                     <div class="card-image">
                       <figure class="image is-96x96">
                         <img class="is-rounded" src="" alt="Placeholder image">
@@ -130,7 +138,7 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Recipe Four</p>
+                          <p class="title is-4">Receipe Four</p>
                         </div>
                       </div>
                       <div class="content">
@@ -150,8 +158,9 @@
         </div>
     </main>
 
-    <div id="weatherContainer"></div>
+    
     <!-- Custom Script -->
+    <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
     <script src="./assets/script.js"></script>
 </body>
 </html>
