@@ -23,28 +23,13 @@ getTastyApi('pasta')
 
 //weather api and geo location api
 document.getElementById('fetchButton').addEventListener('click', fetchWeather);
-document.getElementById('cityInput').addEventListener('keydown', function(event) {
-  if (event.key === 'Enter') {
-    event.preventDefault(); // Prevent the default Enter key behavior (form submission)
-    fetchWeather();
-  }
-});
 
 function fetchWeather() {
-  var apiKey = '312ef17758b755a8564935f0cd1d338b';
-  var city = document.getElementById('cityInput').value;
-
-  if (!city) {
-    // User didn't provide a city, use geolocation
-    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
-    } else {
-      console.log('Geolocation is not supported by this browser.');
-    }
+  
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   } else {
-    // User provided a city, fetch weather based on the city
-    var url = "https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + apiKey + "&units=imperial";
-    fetchWeatherData(url);
+    console.log('Geolocation is not supported by this browser.');
   }
 }
 
@@ -52,7 +37,7 @@ function successCallback(position) {
   var apiKey = '312ef17758b755a8564935f0cd1d338b';
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
-  var url = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=imperial`;
+  var url = `https://api.openweathermap.org/data/2.5/weather?lat=`+latitude+`&lon=`+longitude+`&appid=`+apiKey+`&units=imperial`;
   fetchWeatherData(url);
 }
 
@@ -76,13 +61,13 @@ function fetchWeatherData(url) {
       temperatureElement.textContent = `Temperature: ${temperature}°F`;
 
       var humidityElement = document.createElement('p');
-      humidityElement.textContent = `Humidity: ${humidity}%`;
+      humidityElement.textContent = `Humidity:` +humidity+`%`;
 
       var descriptionElement = document.createElement('p');
-      descriptionElement.textContent = `Description: ${description}`;
+      descriptionElement.textContent = `Description:` + description;
 
       var iconElement = document.createElement('img');
-      iconElement.src = `https://openweathermap.org/img/w/${iconCode}.png`;
+      iconElement.src = `https://openweathermap.org/img/w/`+iconCode+`.png`;
       iconElement.alt = 'Weather Icon';
 
       card.appendChild(temperatureElement);
@@ -91,10 +76,11 @@ function fetchWeatherData(url) {
       card.appendChild(iconElement);
 
       const weatherContainer = document.getElementById('weatherContainer');
-      weatherContainer.innerHTML = ''; // Clear previous results
+      weatherContainer.innerHTML = '';
       weatherContainer.appendChild(card);
     })
     .catch(error => {
       console.log('Error fetching weather data:', error);
     });
 }
+
