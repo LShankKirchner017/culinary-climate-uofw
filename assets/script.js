@@ -1,82 +1,90 @@
-async function getTastyApi(searchTerm) {
-  const url = "https://tasty.p.rapidapi.com/recipes/list?q=" + searchTerm;
-  const options = {
-    method: "GET",
-    headers: {
-      "X-RapidAPI-Key": "1b0bb19499msh05d0b2dc53cd501p14c09bjsnefe3bf5139b3",
-      "X-RapidAPI-Host": "tasty.p.rapidapi.com",
-    },
-  };
+var recipeCards = document.querySelectorAll(".recipe-card")
+console.log(recipeCards)
 
-  try {
+async function getTastyApi(searchTerm) {
+    const url = 'https://tasty.p.rapidapi.com/recipes/list?q=' + searchTerm;
+    const options = {
+    method: 'GET',
+    headers: {
+        'X-RapidAPI-Key': '50d9214a1amsh3bf58b89a12d09ep1173b5jsnedf77ee8a046',
+        'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+        }
+    };
+
+    try {
     const response = await fetch(url, options);
-    const result = await response.json();
-    console.log(result);
-  } catch (error) {
-    console.error(error);
+        const result = await response.json();
+        console.log(result); 
+         getRandomRecipes(result.results)
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//randomly select 4 recipes from the array
+function getRandomRecipes(results){
+  for (let i = 0; i < 4; i++) {
+    var index = Math.floor(Math.random() * results.length);
+    var randomRecipe = results[index];
+    var card = recipeCards[i]
+    card.querySelector(".title").innerText = randomRecipe.name
+    card.querySelector(".content").innerText = randomRecipe.description
+    //card.querySelector(".recipe-pic").innerHTML = randomRecipe.thumbnail_url
+    console.log(randomRecipe)
   }
 }
 
-getTastyApi("cheese");
-getTastyApi("chicken");
-getTastyApi("pasta");
-
 //dayjs display date
 var currentDate = dayjs();
-var formattedDate = currentDate.format("MM-DD-YYYY");
-document.getElementById("dateDisplay").textContent = formattedDate;
+var formattedDate = currentDate.format('MM-DD-YYYY');
+document.getElementById('dateDisplay').textContent = formattedDate;
 
 //weather api and geo location api
-document.getElementById("fetchButton").addEventListener("click", fetchWeather);
+document.getElementById('fetchButton').addEventListener('click', fetchWeather);
 
 function fetchWeather() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(successCallback, errorCallback);
   } else {
-    console.log("Geolocation is not supported by this browser.");
+    console.log('Geolocation is not supported by this browser.');
   }
 }
 
 function successCallback(position) {
-  var apiKey = "312ef17758b755a8564935f0cd1d338b";
+  var apiKey = '312ef17758b755a8564935f0cd1d338b';
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
-  var weatherUrl =
-    `https://api.openweathermap.org/data/2.5/weather?lat=` +
-    latitude +
-    `&lon=` +
-    longitude +
-    `&appid=` +
-    apiKey +
-    `&units=imperial`;
+  var weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=` + latitude + `&lon=` + longitude+ `&appid=` + apiKey + `&units=imperial`;
 
   fetch(weatherUrl)
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
       var temperature = data.main.temp;
       var humidity = data.main.humidity;
       var description = data.weather[0].description;
       var iconCode = data.weather[0].icon;
       var cityName = data.name;
 
-      var card = document.createElement("div");
-      card.classList.add("card");
+      weatherFood(temperature, description)
 
-      var cityNameElement = document.createElement("h2");
+      var card = document.createElement('div');
+      card.classList.add('card');
+
+      var cityNameElement = document.createElement('h2');
       cityNameElement.textContent = cityName;
 
-      var temperatureElement = document.createElement("p");
-      temperatureElement.textContent = `Temperature: ` + temperature + `°F`;
+      var temperatureElement = document.createElement('p');
+      temperatureElement.textContent = `Temperature: `+ temperature + `°F`;
 
-      var humidityElement = document.createElement("p");
+      var humidityElement = document.createElement('p');
       humidityElement.textContent = `Humidity: ` + humidity + `%`;
 
-      var descriptionElement = document.createElement("p");
+      var descriptionElement = document.createElement('p');
       descriptionElement.textContent = `Description: ` + description + ``;
 
-      var iconElement = document.createElement("img");
+      var iconElement = document.createElement('img');
       iconElement.src = `https://openweathermap.org/img/w/` + iconCode + `.png`;
-      iconElement.alt = "Weather Icon";
+      iconElement.alt = 'Weather Icon';
 
       card.appendChild(cityNameElement);
       card.appendChild(temperatureElement);
@@ -84,40 +92,61 @@ function successCallback(position) {
       card.appendChild(descriptionElement);
       card.appendChild(iconElement);
 
-      const weatherContainer = document.getElementById("weatherContainer");
-      weatherContainer.innerHTML = "";
+      const weatherContainer = document.getElementById('weatherContainer');
+      weatherContainer.innerHTML = '';
       weatherContainer.appendChild(card);
     })
-    .catch((error) => {
-      console.log("Error fetching weather data:", error);
+    .catch(error => {
+      console.log('Error fetching weather data:', error);
     });
 }
 
-function errorCallback(error) {
-  console.log("Error fetching geolocation:", error);
+function weatherFood(temperature, description) { 
+  if (temperature > 65) {
+    if (description == "clear sky") {
+      hotClear()
+    } else if (description == "few clouds" || description == "scattered clouds" || description == "broken clouds") {
+      hotCloudy()
+    } else {
+      precip()
+    }
+  } else if (temperature < 65) {
+    if (description == "clear sky") {
+      coldClear()
+    } else if (description == "few clouds" || description == "scattered clouds" || description == "broken clouds"){
+      coldCloudy()
+    }
+  }
 }
 
+function hotClear() {
+  getTastyApi("grill")
+  //grill, salad, Mexican, Spring, bbq, seafood, summer
+  //NO stovetop, bake
+}
 
-var config = {
-  type: "carousel",
-  perView: 3,
-  breakpoints: {
-    767: {
-      perView: 2,
-    },
-  },
-};
-new Glide(".glide", config).mount();
+function hotCloudy() {
+  getTastyApi("spring")
+  //slow cooker, summer, spring, instant pot
+  //NO stovetop, bake
+}
 
+function coldClear() {
+  getTastyApi("every occasion")
+  //every occasion, fall, winter
+}
 
-// local storage 
+function coldCloudy() {
+  getTastyApi("bake")
+  //fall, slow cooker, bake, winter
+}
 
-var $favoritesBtn = $('.card-footer-item')
+function precip() {
+  getTastyApi("comfort food")
+  //bake, winter, comfort food, fall 
+  //NO grill
+}
 
-$('.card-footer-item').on('click' , function(){
-  var saveRecipe = $(this)
-  console.log(saveRecipe)
-  
-})
-
-
+function errorCallback(error) {
+  console.log('Error fetching geolocation:', error);
+}
