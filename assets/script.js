@@ -43,7 +43,7 @@ function successCallback(position) {
   var apiKey = '312ef17758b755a8564935f0cd1d338b';
   var latitude = position.coords.latitude;
   var longitude = position.coords.longitude;
-  var weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=` + latitude + `&lon=` + longitude+ `&appid=` + apiKey + `&units=imperial`;
+  var weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=` + latitude + `&lon=` + longitude + `&appid=` + apiKey + `&units=imperial`;
 
   fetch(weatherUrl)
     .then(response => response.json())
@@ -80,7 +80,7 @@ function successCallback(position) {
       card.appendChild(iconElement);
 
       const weatherContainer = document.getElementById('weatherContainer');
-      weatherContainer.innerHTML = '';
+      
       weatherContainer.appendChild(card);
     })
     .catch(error => {
