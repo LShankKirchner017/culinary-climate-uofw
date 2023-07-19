@@ -2,10 +2,6 @@
     font-family: 'Cormorant', serif;
 };
 
-img {
-    width: 100px;
-    height: 100px;
-}
 .header-image {
     background-image: url("https://images.pexels.com/photos/6707512/pexels-photo-6707512.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
     background-position: center center;
@@ -29,6 +25,14 @@ img {
     justify-content: center;
     align-items: center;
     padding: 15px;
+}
+
+button.glide__arrow.glide__arrow--left {
+    background-color: hsl(204, 86%, 53%);
+}
+
+button.glide__arrow.glide__arrow--right {
+    background-color: hsl(204, 86%, 53%);
 }
 /* :root {
     --primary: #366581;
