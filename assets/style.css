@@ -10,6 +10,17 @@
     background-size: cover;
 }
 
+.block{
+    opacity: .8;
+    display: flex;
+    font-size: 25px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.favBtn {
+    font-size: medium;
+}
+
 .title {
     padding-top: 50px;
 }
@@ -25,6 +36,14 @@
     justify-content: center;
     align-items: center;
     padding: 15px;
+}
+
+button.glide__arrow.glide__arrow--left {
+    background-color: hsl(204, 86%, 53%);
+}
+
+button.glide__arrow.glide__arrow--right {
+    background-color: hsl(204, 86%, 53%);
 }
 /* :root {
     --primary: #366581;
