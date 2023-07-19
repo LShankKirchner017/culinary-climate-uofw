@@ -1,3 +1,6 @@
+var recipeCards = document.querySelectorAll(".recipe-card")
+console.log(recipeCards)
+
 async function getTastyApi(searchTerm) {
     const url = 'https://tasty.p.rapidapi.com/recipes/list?q=' + searchTerm;
     const options = {
@@ -11,17 +14,27 @@ async function getTastyApi(searchTerm) {
     try {
     const response = await fetch(url, options);
         const result = await response.json();
-        console.log(result);
+        console.log(result); //randomly select 4 from the array of 20
+         getRandomRecipes(result.results)
     } catch (error) {
         console.error(error);
     }
+}
+
+function getRandomRecipes(results){
+  for (let i = 0; i < 4; i++) {
+    var index = Math.floor(Math.random() * results.length);
+    var randomRecipe = results[index];
+    var card = recipeCards[i]
+    card.querySelector(".title").innerText = randomRecipe.name
+    console.log(randomRecipe)
+  }
 }
 
 //dayjs display date
 var currentDate = dayjs();
 var formattedDate = currentDate.format('MM-DD-YYYY');
 document.getElementById('dateDisplay').textContent = formattedDate;
-
 
 //weather api and geo location api
 document.getElementById('fetchButton').addEventListener('click', fetchWeather);
@@ -104,29 +117,30 @@ function weatherFood(temperature, description) {
 }
 
 function hotClear() {
-  //Search TastyAPI:
+  getTastyApi("grill")
   //grill, salad, Mexican, Spring, bbq, seafood, summer
   //NO stovetop, bake
 }
 
 function hotCloudy() {
-  getTastyApi(0, 4, "summer")
+  getTastyApi("bbq")
+  console.log("hot and cloudy")
   //slow cooker, summer, spring, instant pot
   //NO stovetop, bake
 }
 
 function coldClear() {
-  //Search TastyAPI:
+  getTastyApi("fall")
   //every occasion, fall, winter
 }
 
 function coldCloudy() {
-  //Search TastyAPI:
+  getTastyApi("winter")
   //fall, slow cooker, bake, winter
 }
 
 function precip() {
-  //Search TastyAPI:
+  getTastyApi("comfort food")
   //bake, winter, comfort food, fall 
   //NO grill
 }
