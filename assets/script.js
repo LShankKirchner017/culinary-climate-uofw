@@ -1,25 +1,53 @@
+var recipeCards = document.querySelectorAll(".recipe-card")
+console.log(recipeCards)
+
 async function getTastyApi(searchTerm) {
   const url = "https://tasty.p.rapidapi.com/recipes/list?q=" + searchTerm;
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "1b0bb19499msh05d0b2dc53cd501p14c09bjsnefe3bf5139b3",
-      "X-RapidAPI-Host": "tasty.p.rapidapi.com",
-    },
-  };
+
+        'X-RapidAPI-Key': '50d9214a1amsh3bf58b89a12d09ep1173b5jsnedf77ee8a046',
+        'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
+        }
+    };
+
+ 
 
   try {
     const response = await fetch(url, options);
+        const result = await response.json();
+        console.log(result); //randomly select 4 from the array of 20
+         getRandomRecipes(result.results)
+    } catch (error) {
+        console.error(error);
+    }
+}
+
+//randomly select 4 recipes from the array
+function getRandomRecipes(results){
+  for (let i = 0; i < 4; i++) {
+    var index = Math.floor(Math.random() * results.length);
+    var randomRecipe = results[index];
+    var card = recipeCards[i]
+    card.querySelector(".title").innerText = randomRecipe.name
+    card.querySelector(".content").innerText = randomRecipe.description
+    //card.querySelector(".recipe-pic").innerHTML = randomRecipe.thumbnail_url
+    console.log(randomRecipe)
+  }
+}
+
+//dayjs display date
+var currentDate = dayjs();
+var formattedDate = currentDate.format('MM-DD-YYYY');
+document.getElementById('dateDisplay').textContent = formattedDate;
+
     const result = await response.json();
     console.log(result);
   } catch (error) {
     console.error(error);
   }
 }
-
-getTastyApi("cheese");
-getTastyApi("chicken");
-getTastyApi("pasta");
 
 //dayjs display date
 var currentDate = dayjs();
@@ -59,8 +87,15 @@ function successCallback(position) {
       var iconCode = data.weather[0].icon;
       var cityName = data.name;
 
+
+      weatherFood(temperature, description)
+
+      var card = document.createElement('div');
+      card.classList.add('card');
+
       var card = document.createElement("div");
       card.classList.add("card");
+
 
       var cityNameElement = document.createElement("h2");
       cityNameElement.textContent = cityName;
@@ -93,10 +128,56 @@ function successCallback(position) {
     });
 }
 
+
+function weatherFood(temperature, description) { 
+  if (temperature > 65) {
+    if (description == "clear sky") {
+      hotClear()
+    } else if (description == "few clouds" || description == "scattered clouds" || description == "broken clouds") {
+      hotCloudy()
+    } else {
+      precip()
+    }
+  } else if (temperature < 65) {
+    if (description == "clear sky") {
+      coldClear()
+    } else if (description == "few clouds" || description == "scattered clouds" || description == "broken clouds"){
+      coldCloudy()
+    }
+  }
+
 function errorCallback(error) {
   console.log("Error fetching geolocation:", error);
 }
 
+function hotClear() {
+  getTastyApi("grill")
+  //grill, salad, Mexican, Spring, bbq, seafood, summer
+  //NO stovetop, bake
+}
+
+function hotCloudy() {
+  getTastyApi("spring")
+  //slow cooker, summer, spring, instant pot
+  //NO stovetop, bake
+}
+
+function coldClear() {
+  getTastyApi("every occasion")
+  //every occasion, fall, winter
+}
+
+
+function coldCloudy() {
+  getTastyApi("bake")
+  //fall, slow cooker, bake, winter
+}
+
+function precip() {
+  getTastyApi("comfort food")
+  //bake, winter, comfort food, fall 
+  //NO grill
+}
 
 var config = {
   type: "carousel",
@@ -121,3 +202,7 @@ $('.card-footer-item').on('click' , function(){
 })
 
 
+
+function errorCallback(error) {
+  console.log('Error fetching geolocation:', error);
+}
