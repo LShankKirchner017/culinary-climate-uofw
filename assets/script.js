@@ -17,8 +17,6 @@ async function getTastyApi(searchTerm) {
     }
 }
 
-
-
 //dayjs display date
 var currentDate = dayjs();
 var formattedDate = currentDate.format('MM-DD-YYYY');
@@ -50,6 +48,8 @@ function successCallback(position) {
       var description = data.weather[0].description;
       var iconCode = data.weather[0].icon;
       var cityName = data.name;
+
+      weatherType(temperature, description)
 
       var card = document.createElement('div');
       card.classList.add('card');
@@ -85,28 +85,23 @@ function successCallback(position) {
     });
 }
 
-function weatherType() {
-  //let clear = 
- // let cloudy = 
-  //let hot = temp > 65
- // let cold = temp < 65
-
-  if (temp > 65) {
-      if (clear) {
-        hotClear()
-      } else {
-        hotCloudy()
-      }
-  } else if (cold) {
-      if (clear) {
-        coldClear()
-      } else {
-        coldCloudy()
-      }
+function weatherType(temperature, description) { 
+  if (temperature.value > 65) {
+    if (description.value = "clear sky") {
+      hotClear()
+    } else {
+       hotCloudy()
+    }
+  } else if (temperature.value < 65) {
+    if (description.value = "clear sky") {
+      coldClear()
+    } else if (description.value = "few clouds" || "scattered clouds" || "broken clouds"){
+      coldCloudy()
+    }
   } else {
     precip()
   }
- }
+}
 
 function hotClear() {
   console.log("Hot and clear skies!")
