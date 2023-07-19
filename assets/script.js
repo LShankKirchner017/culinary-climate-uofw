@@ -26,6 +26,12 @@ var currentDate = dayjs();
 var formattedDate = currentDate.format("MM-DD-YYYY");
 document.getElementById("dateDisplay").textContent = formattedDate;
 
+//bacground audio volume level
+var audio = document.getElementById("myAudio");
+  audio.volume = 0.20;
+  document.querySelector("audio").play();
+
+
 //weather api and geo location api
 document.getElementById("fetchButton").addEventListener("click", fetchWeather);
 
