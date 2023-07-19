@@ -9,6 +9,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&display=swap" rel="stylesheet">
     <!-- Bulma CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.4/css/bulma.min.css"/>
+    <!-- glide core css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.core.min.css" />
+    <!-- glide optional theme css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.2.0/css/glide.theme.min.css" />
     <!-- Custom CSS -->
     <link rel="stylesheet" type="text/css" href="./assets/style.css">
     <title>Culinary Climate</title>
@@ -21,7 +25,8 @@
                 <p class="subtitle is-5"></p>
                   <h1 class="title is-1 mt-3 ml-5 is-black">Culinary <img class="logo" src="assets/images/cc-logo.png" width="100px" height="100px"> Climate</h1>
               </div>
-          </div>
+          </div>      
+        </div>
         <div class="level-right">
             <button class="button is-light mr-5 mt-5 mb-5 level-item"><strong>Favorites ♥️</strong></p></button>
           </div>
@@ -29,25 +34,26 @@
     </div>
   </section>
     <main>
+        <button id="fetchButton" class="button is-light mt-5 mb-5 is-large ml-5">Find me recipes!</button>
 
-        <button id="fetchButton" class="search-btn">Find me recipes!</button>
-        
-        
-          
-          <div class="container-weather">
+
+          <!-- added date display before weather card and city name -->
+          <div>
             <h1 id="dateDisplay"></h1>
-          </div>
-        
+            <div id="weatherContainer">
+            </div>
+       
+      <div class="container">
+        <div class="glide">
+          <div class="glide__track" data-glide-el="track">
+            <!-- <div class="container-recipes"> -->
 
-        <div class="container-recipes">
             <!-- <p>Recipes cards go here</p> -->
             <div class="columns is-mobile $column-gap">
                 <div class="column">
-
-
+                  
                     <!-- recipe one -->
                     <div class="card ml-5">
-
                         <div class="card-image">
                           <figure class="image is-96x96 rounded">
                             <img src="" alt="Placeholder image">
@@ -56,7 +62,7 @@
                         <div class="card-content">
                           <div class="media">
                             <div class="media-content">
-                              <p class="title is-4">Receipe One</p>
+                              <p class="title is-4">Recipe One</p>
                             </div>
                           </div>
                           <div class="content">
@@ -65,8 +71,7 @@
                             <br>
                             <div class="card">
                                 <footer class="card-footer">
-                                  <a href="#" class="card-footer-item">Save to favorites</a>
-                                  <a href="#" class="card-footer-item">Dislike</a>
+                                  <a href="#" class="card-footer-item">Save to favorites ♥️</a>
                                 </footer>
                               </div>
                           </div>
@@ -74,7 +79,7 @@
                       </div>
                 </div>
                 <div class="column">
-                  <!-- receipe two -->
+                  <!-- recipe two -->
                   <div class="card">
                     <div class="card-image">
                       <figure class="image is-96x96 rounded">
@@ -84,7 +89,7 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Receipe Two</p>
+                          <p class="title is-4">Recipe Two</p>
                         </div>
                       </div>
                       <div class="content">
@@ -93,8 +98,7 @@
                         <br>
                         <div class="card">
                             <footer class="card-footer">
-                              <a href="#" class="card-footer-item">Save to favorites</a>
-                              <a href="#" class="card-footer-item">Dislike</a>
+                              <a href="#" class="card-footer-item">Save to favorites ♥️</a>
                             </footer>
                           </div>
                       </div>
@@ -102,7 +106,7 @@
                   </div>
             </div>
             <div class="column">
-                  <!-- receipe three -->
+                  <!-- recipe three -->
                   <div class="card">
                     <div class="card-image">
                       <figure class="image is-96x96 rounded">
@@ -112,7 +116,7 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Receipe Three</p>
+                          <p class="title is-4">Recipe Three</p>
                         </div>
                       </div>
                       <div class="content">
@@ -121,8 +125,7 @@
                         <br>
                         <div class="card">
                             <footer class="card-footer">
-                              <a href="#" class="card-footer-item">Save to favorites</a>
-                              <a href="#" class="card-footer-item">Dislike</a>
+                              <a href="#" class="card-footer-item">Save to favorites ♥️</a>
                             </footer>
                           </div>
                       </div>
@@ -142,7 +145,7 @@
                     <div class="card-content">
                       <div class="media">
                         <div class="media-content">
-                          <p class="title is-4">Receipe Four</p>
+                          <p class="title is-4">Recipe Four</p>
                         </div>
                       </div>
                       <div class="content">
@@ -151,8 +154,7 @@
                         <br>
                         <div class="card">
                             <footer class="card-footer">
-                              <a href="#" class="card-footer-item">Save to favorites</a>
-                              <a href="#" class="card-footer-item">Dislike</a>
+                              <a href="#" class="card-footer-item">Save to favorites ♥️</a>
                             </footer>
                           </div>
                       </div>
@@ -162,9 +164,9 @@
         </div>
     </main>
 
-    
-    <!-- Custom Script -->
+    <!-- day JS -->
     <script src="https://cdn.jsdelivr.net/npm/dayjs@1.10.7/dayjs.min.js"></script>
+    <!-- Custom Script -->
     <script src="./assets/script.js"></script>
 </body>
 </html>

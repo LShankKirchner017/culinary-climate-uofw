@@ -17,6 +17,15 @@
 .title.is-1 {
   font-size: 5rem;
 }
+
+.container {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
 /* :root {
     --primary: #366581;
     --secondary: #48B4C6;
