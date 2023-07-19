@@ -10,6 +10,17 @@
     background-size: cover;
 }
 
+.block{
+    opacity: .8;
+    display: flex;
+    font-size: 25px;
+    text-shadow: 1px 1px 1px black;
+}
+
+.favBtn {
+    font-size: medium;
+}
+
 .title {
     padding-top: 50px;
 }

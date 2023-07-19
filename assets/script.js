@@ -93,4 +93,13 @@ function errorCallback(error) {
 }
 
 
+// local storage 
+
+var $favoritesBtn = $('.card-footer-item')
+
+$('.card-footer-item').on('click' , function(){
+  var saveRecipe = $(this)
+  console.log(saveRecipe)
+  
+})
 
