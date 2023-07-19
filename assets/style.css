@@ -37,6 +37,14 @@
     align-items: center;
     padding: 15px;
 }
+
+button.glide__arrow.glide__arrow--left {
+    background-color: hsl(204, 86%, 53%);
+}
+
+button.glide__arrow.glide__arrow--right {
+    background-color: hsl(204, 86%, 53%);
+}
 /* :root {
     --primary: #366581;
     --secondary: #48B4C6;
