@@ -97,6 +97,7 @@ function errorCallback(error) {
   console.log("Error fetching geolocation:", error);
 }
 
+
 var config = {
   type: "carousel",
   perView: 3,
@@ -107,3 +108,16 @@ var config = {
   },
 };
 new Glide(".glide", config).mount();
+
+
+// local storage 
+
+var $favoritesBtn = $('.card-footer-item')
+
+$('.card-footer-item').on('click' , function(){
+  var saveRecipe = $(this)
+  console.log(saveRecipe)
+  
+})
+
+
