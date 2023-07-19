@@ -21,12 +21,15 @@ async function getTastyApi(searchTerm) {
     }
 }
 
+//randomly select 4 recipes from the array
 function getRandomRecipes(results){
   for (let i = 0; i < 4; i++) {
     var index = Math.floor(Math.random() * results.length);
     var randomRecipe = results[index];
     var card = recipeCards[i]
     card.querySelector(".title").innerText = randomRecipe.name
+    card.querySelector(".content").innerText = randomRecipe.description
+    //card.querySelector(".recipe-pic").innerHTML = randomRecipe.thumbnail_url
     console.log(randomRecipe)
   }
 }
@@ -123,19 +126,18 @@ function hotClear() {
 }
 
 function hotCloudy() {
-  getTastyApi("bbq")
-  console.log("hot and cloudy")
+  getTastyApi("spring")
   //slow cooker, summer, spring, instant pot
   //NO stovetop, bake
 }
 
 function coldClear() {
-  getTastyApi("fall")
+  getTastyApi("every occasion")
   //every occasion, fall, winter
 }
 
 function coldCloudy() {
-  getTastyApi("winter")
+  getTastyApi("bake")
   //fall, slow cooker, bake, winter
 }
 
