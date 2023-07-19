@@ -3,7 +3,7 @@ async function getTastyApi(searchTerm) {
     const options = {
     method: 'GET',
     headers: {
-        'X-RapidAPI-Key': '1b0bb19499msh05d0b2dc53cd501p14c09bjsnefe3bf5139b3',
+        'X-RapidAPI-Key': '50d9214a1amsh3bf58b89a12d09ep1173b5jsnedf77ee8a046',
         'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
         }
     };
@@ -49,7 +49,7 @@ function successCallback(position) {
       var iconCode = data.weather[0].icon;
       var cityName = data.name;
 
-      weatherType(temperature, description)
+      weatherFood(temperature, description)
 
       var card = document.createElement('div');
       card.classList.add('card');
@@ -85,34 +85,32 @@ function successCallback(position) {
     });
 }
 
-function weatherType(temperature, description) { 
-  if (temperature.value > 65) {
-    if (description.value = "clear sky") {
+function weatherFood(temperature, description) { 
+  if (temperature > 65) {
+    if (description == "clear sky") {
       hotClear()
+    } else if (description == "few clouds" || description == "scattered clouds" || description == "broken clouds") {
+      hotCloudy()
     } else {
-       hotCloudy()
+      precip()
     }
-  } else if (temperature.value < 65) {
-    if (description.value = "clear sky") {
+  } else if (temperature < 65) {
+    if (description == "clear sky") {
       coldClear()
-    } else if (description.value = "few clouds" || "scattered clouds" || "broken clouds"){
+    } else if (description == "few clouds" || description == "scattered clouds" || description == "broken clouds"){
       coldCloudy()
     }
-  } else {
-    precip()
   }
 }
 
 function hotClear() {
-  console.log("Hot and clear skies!")
   //Search TastyAPI:
   //grill, salad, Mexican, Spring, bbq, seafood, summer
   //NO stovetop, bake
 }
 
 function hotCloudy() {
-  console.log("Hot and cloudy skies!")
-  //Search TastyAPI:
+  getTastyApi(0, 4, "summer")
   //slow cooker, summer, spring, instant pot
   //NO stovetop, bake
 }
