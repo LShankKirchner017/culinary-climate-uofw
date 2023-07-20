@@ -166,6 +166,7 @@ function errorCallback(error) {
   console.log("Error fetching geolocation:", error);
 }
 
+// carousel config & function
 var config = {
   type: "carousel",
   perView: 3,
