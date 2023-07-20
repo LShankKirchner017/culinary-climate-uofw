@@ -174,6 +174,11 @@ function precip() {
 }
 
 function errorCallback(error) {
+
+  console.log('Error fetching geolocation:', error);
+}
+
+
   console.log("Error fetching geolocation:", error);
 }
 
@@ -196,4 +201,4 @@ var $favoritesBtn = $(".card-footer-item");
 $(".card-footer-item").on("click", function () {
   var saveRecipe = $(this);
   console.log(saveRecipe);
-});
+

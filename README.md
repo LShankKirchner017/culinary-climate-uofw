@@ -1,7 +1,7 @@
 # Culinary Climate🍴🌦️
 
 
-An app designed to help you decide what to cook for dinner based on the weather forecast. 
+An app designed to help you decide what to cook for dinner based on the weather forecast.
 
 
 ## User Story
