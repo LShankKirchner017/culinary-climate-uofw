@@ -35,5 +35,39 @@ button.glide__arrow.glide__arrow--left {
 }
 
 button.glide__arrow.glide__arrow--right {
+    background-color: hsl(204, 86%, 53%);
+}
+
+#videoBackground {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+  
+/* :root {
+    --primary: #366581;
+    --secondary: #48B4C6;
+}
+
+.card {
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.content {
+    text-align: start;
+}
+
+.card-footer {
+    padding: 5px;
+    margin: 1px;;
+    font-size: 10px;
+    text-align: center;
   background-color: hsl(204, 86%, 53%);
+
 }

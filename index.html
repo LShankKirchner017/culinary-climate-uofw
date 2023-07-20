@@ -22,6 +22,16 @@
 </head>
 
 <body>
+  <!-- video tag for bacground -->
+  <video id="videoBackground" autoplay loop muted playsinline>
+    <source src="./assets/bacground video/background.mp4" type="video/mp4">
+  </video>
+ <!-- audio tag added -->
+  <audio id="myAudio" src="./assets/bacground music/Mozart - Turkish March - Marcha Turca.mp3" autoplay loop>
+    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+  </audio>
+  
+
   <section class="hero is-small is-info">
     <div class="hero-head">
       <div class="level-left">
@@ -35,6 +45,20 @@
     <div class="block level-right mr-5 mb-5">
       <button class="favBtn"><a href="./favorites.html" target=""><strong>Favorite Recipes♥️</strong></a></button>
     </div>
+
+  </section>
+
+    <main>
+        <button id="fetchButton" class="button is-light mt-5 mb-5 is-large ml-5">Find me recipes!</button>
+
+          <!-- added date display before weather card and city name -->
+          <div>
+            <h1 id="dateDisplay"></h1>
+            <div id="weatherContainer">
+            </div>
+       
+
+
 
   </section>
   <main>
