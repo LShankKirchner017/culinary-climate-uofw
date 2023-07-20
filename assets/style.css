@@ -1,21 +1,20 @@
-*{
-    font-family: 'Cormorant', serif;
-};
+* {
+  font-family: "Cormorant", serif;
+}
 
-
-.block{
-    opacity: .8;
-    display: flex;
-    font-size: 25px;
-    text-shadow: 1px 1px 1px black;
+.block {
+  opacity: 0.8;
+  display: flex;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px black;
 }
 
 .favBtn {
-    font-size: medium;
+  font-size: medium;
 }
 
 .title {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .title.is-1 {
@@ -23,86 +22,18 @@
 }
 
 .container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
 }
 
 button.glide__arrow.glide__arrow--left {
-    background-color: hsl(204, 86%, 53%);
+  background-color: hsl(204, 86%, 53%);
 }
 
 button.glide__arrow.glide__arrow--right {
-    background-color: hsl(204, 86%, 53%);
+  background-color: hsl(204, 86%, 53%);
 }
-/* :root {
-    --primary: #366581;
-    --secondary: #48B4C6;
-}
-
-.card {
-    border-radius: 20px;
-    padding: 10px;
-    margin: 10px;
-}
-
-.content {
-    text-align: start;
-}
-
-.card-footer {
-    padding: 5px;
-    margin: 1px;;
-    font-size: 10px;
-    text-align: center;
-}
-
-header{
-
-}
-
-
-img{
-width: 1.6em;
-};
-
-
-
-
-.favorites-btn {
-
-};
-
-
-
-main{
-
-};
-
-.search{
-
-};
-
-.search-btn{
-
-};
-
-.search-btn:hover{
-
-};
-
-.container-weather{
-
-};
-
-.container-recipes{
-
-};
-
-.reset-button{
-    
-};
- 
