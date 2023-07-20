@@ -150,3 +150,4 @@ function precip() {
 function errorCallback(error) {
   console.log('Error fetching geolocation:', error);
 }
+
