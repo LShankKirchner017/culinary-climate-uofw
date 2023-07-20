@@ -22,6 +22,15 @@
 </head>
 
 <body>
+  <!-- video tag for bacground -->
+  <video id="videoBackground" autoplay loop muted playsinline>
+    <source src="./assets/bacground video/background.mp4" type="video/mp4">
+  </video>
+ <!-- audio tag added -->
+  <audio id="myAudio" src="./assets/bacground music/Mozart - Turkish March - Marcha Turca.mp3" autoplay loop>
+    <p>If you are reading this, it is because your browser does not support the audio element.</p>
+  </audio>
+
   <section class="hero is-small is-info">
     <div class="hero-head">
       <div class="level-left">
@@ -44,9 +53,6 @@
     <div>
       
       <h1 id="dateDisplay"></h1>
-      <audio id="myAudio" src="./assets/bacground music/Mozart - Turkish March - Marcha Turca.mp3" loop controls>
-        <p>If you are reading this, it is because your browser does not support the audio element.</p>
-      </audio>
       <div id="weatherContainer">
       </div>
       <!--recipe cards in a slider  -->
