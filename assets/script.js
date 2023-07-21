@@ -180,6 +180,25 @@ function precip() {
 
 function errorCallback(error) {
   console.log("Error fetching geolocation:", error);
+}
+
+// local storage
+
+var favorites = document.querySelectorAll(".card-footer-item");
+console.log(favorites);
+
+for (let i = 0; i < favorites.length; i++) {
+  var favBtn = favorites[i];
+  console.log(favBtn);
+
+  favBtn.addEventListener("click", function (event) {
+    var description =
+      event.target.parentElement.parentElement.parentElement.firstElementChild;
+    console.log(description.innerHTML);
+
+    localStorage.setItem("description", description.innerHTML);
+  });
+}
 
 // carousel config & function
 var config = {
@@ -192,23 +211,3 @@ var config = {
   },
 };
 new Glide(".glide", config).mount();
-
-
-// local storage
-
-var favorites = document.querySelectorAll('.card-footer-item')
-console.log(favorites)
-
-for (let i=0; i <favorites.length; i++) {
-  var favBtn = favorites[i];
-  console.log(favBtn)
-
-  favBtn.addEventListener('click', function(event){
-    var description = event.target.parentElement.parentElement.parentElement.firstElementChild
-    console.log(description.innerHTML)
-
-    localStorage.setItem('description', description.innerHTML)
-  })
-
-};
-
