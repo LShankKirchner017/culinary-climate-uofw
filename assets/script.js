@@ -179,9 +179,6 @@ function errorCallback(error) {
 }
 
 
-  console.log("Error fetching geolocation:", error);
-}
-
 // carousel config & function
 var config = {
   type: "carousel",
@@ -194,11 +191,23 @@ var config = {
 };
 new Glide(".glide", config).mount();
 
+
+
 // local storage
 
-var $favoritesBtn = $(".card-footer-item");
+var favorites = document.querySelectorAll('.card-footer-item')
+console.log(favorites)
 
-$(".card-footer-item").on("click", function () {
-  var saveRecipe = $(this);
-  console.log(saveRecipe);
+for (let i=0; i <favorites.length; i++) {
+  var favBtn = favorites[i];
+  console.log(favBtn)
+
+  favBtn.addEventListener('click', function(event){
+    var description = event.target.parentElement.parentElement.parentElement.firstElementChild
+    console.log(description.innerHTML)
+
+    localStorage.setItem('description', description.innerHTML)
+  })
+
+};
 
