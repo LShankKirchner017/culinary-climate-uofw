@@ -1,5 +1,3 @@
-
-
 async function getTastyApi(searchTerm) {
   const url = "https://tasty.p.rapidapi.com/recipes/list?q=" + searchTerm;
   const options = {
@@ -42,15 +40,15 @@ document.getElementById("dateDisplay").textContent = formattedDate;
 
 //bacground audio volume level
 var audio = document.getElementById("myAudio");
-  audio.volume = 0.20;
- // audio.play();
+audio.volume = 0.2;
+// audio.play();
 
-  //findme recipes btn play event
-  document.getElementById("fetchButton").addEventListener("click", function() {
-    var audio = document.getElementById("myAudio");
-    audio.play();
-  });
-  
+//findme recipes btn play event
+document.getElementById("fetchButton").addEventListener("click", function () {
+  var audio = document.getElementById("myAudio");
+  audio.play();
+});
+
 //weather api and geo location api
 document.getElementById("fetchButton").addEventListener("click", fetchWeather);
 
@@ -175,10 +173,7 @@ function precip() {
 }
 
 function errorCallback(error) {
-
-  console.log('Error fetching geolocation:', error);
-
-
+  console.log("Error fetching geolocation:", error);
 
   console.log("Error fetching geolocation:", error);
 }
@@ -194,4 +189,3 @@ var config = {
   },
 };
 new Glide(".glide", config).mount();
-
