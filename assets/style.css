@@ -1,28 +1,20 @@
-*{
-    font-family: 'Cormorant', serif;
-};
-
-.header-image {
-    background-image: url("https://images.pexels.com/photos/6707512/pexels-photo-6707512.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
+* {
+  font-family: "Cormorant", serif;
 }
 
-.block{
-    opacity: .8;
-    display: flex;
-    font-size: 25px;
-    text-shadow: 1px 1px 1px black;
+.block {
+  opacity: 0.8;
+  display: flex;
+  font-size: 25px;
+  text-shadow: 1px 1px 1px black;
 }
 
 .favBtn {
-    font-size: medium;
+  font-size: medium;
 }
 
 .title {
-    padding-top: 50px;
+  padding-top: 50px;
 }
 
 .title.is-1 {
@@ -30,16 +22,16 @@
 }
 
 .container {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
 }
 
 button.glide__arrow.glide__arrow--left {
-    background-color: hsl(204, 86%, 53%);
+  background-color: hsl(204, 86%, 53%);
 }
 
 button.glide__arrow.glide__arrow--right {
@@ -76,51 +68,6 @@ button.glide__arrow.glide__arrow--right {
     margin: 1px;;
     font-size: 10px;
     text-align: center;
-}
-
-header{
+  background-color: hsl(204, 86%, 53%);
 
 }
-
-
-img{
-width: 1.6em;
-};
-
-
-
-
-.favorites-btn {
-
-};
-
-
-
-main{
-
-};
-
-.search{
-
-};
-
-.search-btn{
-
-};
-
-.search-btn:hover{
-
-};
-
-.container-weather{
-
-};
-
-.container-recipes{
-
-};
-
-.reset-button{
-    
-};
- 
