@@ -1,5 +1,3 @@
-
-
 async function getTastyApi(searchTerm) {
   const url = "https://tasty.p.rapidapi.com/recipes/list?q=" + searchTerm;
   const options = {
@@ -28,10 +26,12 @@ function getRandomRecipes(results) {
     var index = Math.floor(Math.random() * results.length);
     var randomRecipe = results[index];
     var card = recipeCards[i];
+    card.querySelector(".recipe-pic").src = randomRecipe.thumbnail_url;
     card.querySelector(".title").innerText = randomRecipe.name;
     card.querySelector(".content").innerText = randomRecipe.description;
-    //card.querySelector(".recipe-pic").innerHTML = randomRecipe.thumbnail_url
+    card.querySelector(".title").href = randomRecipe.original_video_url;
     console.log(randomRecipe);
+    console.log(randomRecipe.thumbnail_url);
   }
 }
 
@@ -42,6 +42,7 @@ document.getElementById("dateDisplay").textContent = formattedDate;
 
 //bacground audio volume level
 var audio = document.getElementById("myAudio");
+<<<<<<< HEAD
   audio.volume = 0.20;
   audio.play();
 
@@ -52,6 +53,8 @@ var audio = document.getElementById("myAudio");
     audio.play();
   });
   
+
+
 //weather api and geo location api
 document.getElementById("fetchButton").addEventListener("click", fetchWeather);
 
@@ -176,10 +179,7 @@ function precip() {
 }
 
 function errorCallback(error) {
-
-  console.log('Error fetching geolocation:', error);
-
-
+  console.log("Error fetching geolocation:", error);
 
   console.log("Error fetching geolocation:", error);
 }
@@ -195,4 +195,3 @@ var config = {
   },
 };
 new Glide(".glide", config).mount();
-
