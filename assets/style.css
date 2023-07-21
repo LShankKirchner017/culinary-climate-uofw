@@ -1,5 +1,6 @@
 * {
   font-family: "Cormorant", serif;
+  
 }
 
 .block {
@@ -15,10 +16,15 @@
 
 .title {
   padding-top: 50px;
+  
 }
 
 .title.is-1 {
   font-size: 5rem;
+}
+
+.title.is-2 {
+  color: white;
 }
 
 .container {
