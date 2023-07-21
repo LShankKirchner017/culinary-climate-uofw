@@ -41,12 +41,7 @@ var formattedDate = currentDate.format("MM-DD-YYYY");
 document.getElementById("dateDisplay").textContent = formattedDate;
 
 //bacground audio volume level
-var audio = document.getElementById("myAudio");
-<<<<<<< HEAD
-  audio.volume = 0.20;
-  audio.play();
-
-  //findme recipes btn play event
+//findme recipes btn play event
   document.getElementById("fetchButton").addEventListener("click", function() {
     var audio = document.getElementById("myAudio");
     audio.volume = 0.20;
