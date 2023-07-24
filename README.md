@@ -1,36 +1,39 @@
 # Culinary Climate🍴🌦️
 
-
 An app designed to help you decide what to cook for dinner based on the weather forecast.
 
-
 ## User Story
- As a dinner host, I want to prepare a meal that compliments the current weather conditions so that myself and my guests are satisified. 
+
+As a dinner host, I want to prepare a meal that compliments the current weather conditions so that myself and my guests are satisfied.
 
 #
 
- ## Acceptance Criteria
- GIVEN I am using the Culinary Climate app
- <BR>
- WHEN I enter a city into the search bar
- <BR>
- THEN I get the current weather conditionsn of that city.
- <br>
- WHEN I get the weather results
- <br>
- THEN I get a list of multiple recipes that compliment the weather conditions that I can choose to favorite or dislike.
- <br>
- WHEN I favorite a recipe
- <br>
- THEN it will save in local storage.
+## Acceptance Criteria
+
+GIVEN I am using the Culinary Climate app
+<BR>
+WHEN I enter a city into the search bar
+<BR>
+THEN I get the current weather conditions of that city.
+<br>
+WHEN I get the weather results
+<br>
+THEN I get a list of multiple recipes that compliment the weather conditions that I can choose to favorite or dislike.
+<br>
+WHEN I favorite a recipe
+<br>
+THEN it will save in local storage.
 
 #
 
-Link to deploy application:
+Link to deploy application: https://lshankkirchner017.github.io/culinary-climate-uofw/
 
-<!-- ![Project Screenshot] -->
+## Screenshots
+
+![Alt text](assets/screenshots/Capture1.PNG) ![Alt text](assets/screenshots/Capture2.PNG) ![Alt text](assets/screenshots/Capture3.PNG) ![Alt text](assets/screenshots/Capture4.PNG)
 
 ## Other Requirements:
+
 - The application must be deployed to GitHub Pages, have a quality README, and have a clean repository that meets quality coding standards.
 
 - The project must use a CSS framework other than Bootstrap, be interactive and responsive, use modals instead of alerts, confirms, or prompts, and have a polish UI.
@@ -40,14 +43,16 @@ Link to deploy application:
 #
 
 ## Resources
-- Open Weather API 
-https://openweathermap.org/api
+
+- Open Weather API
+  https://openweathermap.org/api
 - Tasty API
-https://rapidapi.com/apidojo/api/tasty/details
+  https://rapidapi.com/apidojo/api/tasty/details
 
 #
 
 ## Project Developers
+
 - Lindsay Shank-Kirchner
 - Annika Crossley
 - Cuma Ugur
