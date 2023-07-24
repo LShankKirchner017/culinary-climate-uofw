@@ -3,7 +3,7 @@ async function getTastyApi(searchTerm) {
   const options = {
     method: "GET",
     headers: {
-      "X-RapidAPI-Key": "50d9214a1amsh3bf58b89a12d09ep1173b5jsnedf77ee8a046",
+      "X-RapidAPI-Key": "8c4e4111b2msh268ed4ca570bb66p1dfb2cjsn0f447408ac7d",
       "X-RapidAPI-Host": "tasty.p.rapidapi.com",
     },
   };
