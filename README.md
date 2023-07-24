@@ -26,7 +26,7 @@ THEN it will save in local storage.
 
 #
 
-Link to deploy application:
+Link to deploy application: https://lshankkirchner017.github.io/culinary-climate-uofw/
 
 <!-- ![Project Screenshot] -->
 
