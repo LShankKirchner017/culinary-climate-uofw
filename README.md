@@ -28,7 +28,9 @@ THEN it will save in local storage.
 
 Link to deploy application: https://lshankkirchner017.github.io/culinary-climate-uofw/
 
-<!-- ![Project Screenshot] -->
+## Screenshots
+
+![Alt text](assets/screenshots/Capture1.PNG) ![Alt text](assets/screenshots/Capture2.PNG) ![Alt text](assets/screenshots/Capture3.PNG) ![Alt text](assets/screenshots/Capture4.PNG)
 
 ## Other Requirements:
 
