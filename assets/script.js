@@ -201,6 +201,9 @@ var config = {
     767: {
       perView: 2,
     },
+    428: {
+      perView: 1,
+    },
   },
 };
 new Glide(".glide", config).mount();

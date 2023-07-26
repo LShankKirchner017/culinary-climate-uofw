@@ -3,6 +3,11 @@
   
 }
 
+h2 {
+  text-decoration: underline;
+  padding-top: 25px;
+  padding-bottom: 25px;
+}
 .block {
   opacity: 0.8;
   display: flex;
@@ -81,26 +86,7 @@ button.glide__arrow.glide__arrow--right {
     z-index: -1;
   }
   
-/* :root {
-    --primary: #366581;
-    --secondary: #48B4C6;
-}
+  #weatherContainer {
+    text-transform: capitalize;
+  }
 
-.card {
-    border-radius: 20px;
-    padding: 10px;
-    margin: 10px;
-}
-
-.content {
-    text-align: start;
-}
-
-.card-footer {
-    padding: 5px;
-    margin: 1px;;
-    font-size: 10px;
-    text-align: center;
-  background-color: hsl(204, 86%, 53%);
-
-}
