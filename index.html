@@ -44,23 +44,23 @@
     <div class="block level-right mr-5 mb-5">
       <button class="favBtn"><a href="./favorites.html" target=""><strong>Favorite Recipes♥️</strong></a></button>
     </div>
-
   </section>
   <!-- added date display before weather card and city name -->
-
+<section>
   <h1 class="has-text-centered title is-2" id="dateDisplay"></h1>
   <div class="has-text-centered title is-3" id="weatherContainer">
   </div>
+  </div>
   </section>
   <main>
-    <button id="fetchButton" class="button is-info mt-5 mb-5 is-large ml-5">Find me recipes!</button>
+    <button id="fetchButton" class="button is-info is-large mt-5 mb-5  ml-5">Find me recipes!</button>
     <!-- added date display before weather card and city name -->
     <div>
-
       <h1 id="dateDisplay"></h1>
       <div id="weatherContainer">
       </div>
       <!--recipe cards in a slider  -->
+      <div class="columns is-mobile"></div>
       <div class="container">
         <div class="glide">
           <div class="glide__track" data-glide-el="track">
@@ -69,7 +69,6 @@
               <!-- recipe one -->
               <li class="glide__slide">
                 <div class="column">
-
                   <div class="card recipe-card ml-5">
                     <div class="card-image has-text-centered">
                       <figure class="image is-4by5 is-fullwidth mt-5">
@@ -81,7 +80,7 @@
                       <div class="media">
                         <div class="media-content">
 
-                          <a title="_blank" class="title is-4" href="">Recipe One</a>
+                          <a title="_blank" class="title is-4 is-underlined has-text-link-dark" href="">Recipe One</a>
                         </div>
                       </div>
                       <div class="content is-size-4">
@@ -112,7 +111,7 @@
                       <div class="card-content">
                         <div class="media">
                           <div class="media-content">
-                            <a title="_blank" class="title is-4">Recipe Two</a>
+                            <a title="_blank" class="title is-4 is-underlined has-text-link-dark">Recipe Two</a>
                           </div>
                         </div>
                         <div class="content">
@@ -143,7 +142,7 @@
                       <div class="card-content">
                         <div class="media">
                           <div class="media-content">
-                            <a title="_blank" class="title is-4">Recipe Three</a>
+                            <a title="_blank" class="title is-4 is-underlined has-text-link-dark">Recipe Three</a>
                           </div>
                         </div>
                         <div class="content">
@@ -174,7 +173,7 @@
                       <div class="card-content">
                         <div class="media">
                           <div class="media-content">
-                            <a target="_blank" class="title is-4">Recipe Four</a>
+                            <a target="_blank" class="title is-4 is-underlined has-text-link-dark">Recipe Four</a>
                           </div>
                         </div>
                         <div class="content">
@@ -222,5 +221,9 @@
   <script src="./assets/script.js"></script>
 
 </body>
-
+<footer class="footer">
+  <div class="content has-text-centered"
+  <p>
+    <strong>Copyright 2023</strong> Developed by Annika Crossley, Liz Friedman, Lindsay Shank-Kirchner, & Cuma Ugur</p>
+</footer>
 </html>
