@@ -11,7 +11,6 @@ async function getTastyApi(searchTerm) {
   try {
     const response = await fetch(url, options);
     const result = await response.json();
-    console.log(result);
     getRandomRecipes(result.results);
   } catch (error) {
     console.error(error);
@@ -21,17 +20,17 @@ async function getTastyApi(searchTerm) {
 //randomly select 4 recipes from the array
 function getRandomRecipes(results) {
   var recipeCards = document.querySelectorAll(".recipe-card");
-  console.log(recipeCards);
+  // console.log(recipeCards);
   for (let i = 0; i < recipeCards.length; i++) {
     var index = Math.floor(Math.random() * results.length);
     var randomRecipe = results[index];
     var card = recipeCards[i];
     card.querySelector(".recipe-pic").src = randomRecipe.thumbnail_url;
     card.querySelector(".title").innerText = randomRecipe.name;
-    card.querySelector(".content").innerText = randomRecipe.description;
+    card.querySelector(".content span:first-child").innerText = randomRecipe.description;
     card.querySelector(".title").href = randomRecipe.original_video_url;
-    console.log(randomRecipe);
-    console.log(randomRecipe.thumbnail_url);
+    // console.log(randomRecipe);
+    // console.log(randomRecipe.thumbnail_url);
   }
 }
 
@@ -175,7 +174,29 @@ function errorCallback(error) {
   console.log("Error fetching geolocation:", error);
 }
 
+
+// carousel config & function
+var config = {
+  type: "carousel",
+  perView: 3,
+  breakpoints: {
+    767: {
+      perView: 2,
+    },
+    428: {
+      perView: 1,
+    },
+  },
+};
+var glide = new Glide(".glide", config)
+glide
+  .on("mount.after", function () {
+    console.log("glide mounted");
+  })
+  .mount();
 // local storage
+
+createFavListeners()
 
 var favorites = document.querySelectorAll(".card-footer-item");
 console.log(favorites);
@@ -192,18 +213,3 @@ for (let i = 0; i < favorites.length; i++) {
     localStorage.setItem("description", description.innerHTML);
   });
 }
-
-// carousel config & function
-var config = {
-  type: "carousel",
-  perView: 3,
-  breakpoints: {
-    767: {
-      perView: 2,
-    },
-    428: {
-      perView: 1,
-    },
-  },
-};
-new Glide(".glide", config).mount();
